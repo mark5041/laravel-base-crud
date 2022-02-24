@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="col-3">
-                <img class="fluid-img" src=" {{ $comic->thumb }}" alt="{{ $comic->title }}">
+                <img class="img-fluid" src=" {{ $comic->thumb }}" alt="{{ $comic->title }}">
             </div>
             <div class="col-9">
                 <div>{{ $comic->description }}</div>
