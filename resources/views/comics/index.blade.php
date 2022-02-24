@@ -38,7 +38,10 @@
                             <td>{{ $comic->artists }}</td>
                             <td>{{ $comic->price }} €</td>
                             <td>{{ $comic->sale_date }}</td>
-                            <td><a class="btn btn-primary" href="{{ route('comics.show', $comic) }}">View</a></td>
+                            <td>
+                                <a class="btn btn-secondary" href="{{ route('comics.show', $comic) }}">View</a>
+                                <a class="btn btn-secondary" href="{{ route('comics.edit', $comic) }}">Edit</a>
+                            </td>
                         </tr>
                     @endforeach
                     </tbody>

@@ -95,7 +95,7 @@ class ComicController extends Controller
         $updated = $comic->update($data);
 
         if (!$updated) {
-            dd('aggiornamento dei dati non riuscito');
+            dd('update non riuscito');
         }
 
         return redirect()->route('comics.show', $comic->id);
