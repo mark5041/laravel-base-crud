@@ -8,6 +8,14 @@
 
 <main class="comic">
 
+    @if (session('status'))
+        <div class="alert alert-success">
+            <div class="container">
+                {{ session('status') }}
+            </div>
+        </div>
+    @endif
+
     <div class="container">
         <div class="row">
             <h1 class="h1">Admin - All Comics</h1>
@@ -41,6 +49,11 @@
                             <td>
                                 <a class="btn btn-secondary" href="{{ route('comics.show', $comic) }}">View</a>
                                 <a class="btn btn-secondary" href="{{ route('comics.edit', $comic) }}">Edit</a>
+                                <form action="{{ route('comics.destroy', $comic->id) }}" method="post">
+                                    @csrf
+                                    @method('DELETE')
+                                    <input class="btn btn-danger" type="submit" value="Delete">
+                                </form>
                             </td>
                         </tr>
                     @endforeach
